@@ -7,9 +7,11 @@
 
 import Foundation
 import Favgame_Core
+import Swinject
 
 public class DetailRouter {
-  let container: Container = {
+  public init() {}
+  public let container: Container = {
     let container = Injection().container
     
     container.register(DetailViewController.self) { resolver in

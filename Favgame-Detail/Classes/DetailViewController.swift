@@ -10,7 +10,7 @@ import Combine
 import SkeletonView
 import Favgame_Core
 
-class DetailViewController: UIViewController {
+public class DetailViewController: UIViewController {
   // MARK: - Properties
   var getGameDetailUseCase: GetGameDetailUseCase?
   var checkIsFavoriteUseCase: CheckIsFavoriteUseCase?
