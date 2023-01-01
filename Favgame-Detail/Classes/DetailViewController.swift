@@ -206,7 +206,7 @@ public class DetailViewController: UIViewController {
     NotificationCenter.default.post(name: NSNotification.Name(Constant.favoritePressedNotif), object: nil)
   }
   
-  func configure(withGameId id: Int) {
+  public func configure(withGameId id: Int) {
     gameId = id
   }
   
