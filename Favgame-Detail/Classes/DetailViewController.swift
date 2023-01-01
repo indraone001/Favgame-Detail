@@ -34,11 +34,11 @@ public class DetailViewController: UIViewController {
     collectionView.register(
       DetailHeaderView.self,
       forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-      withReuseIdentifier: DetailHeaderView.identifier
+      withReuseIdentifier: DetailHeaderView().identifier
     )
     collectionView.register(
       DetailDesccriptionCollectionViewCell.self,
-      forCellWithReuseIdentifier: DetailDesccriptionCollectionViewCell.identifier
+      forCellWithReuseIdentifier: DetailDesccriptionCollectionViewCell().identifier
     )
     return collectionView
   }()
@@ -220,7 +220,7 @@ extension DetailViewController: UICollectionViewDelegate, UICollectionViewDataSo
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard let cell = collectionView.dequeueReusableCell(
-      withReuseIdentifier: DetailDesccriptionCollectionViewCell.identifier,
+      withReuseIdentifier: DetailDesccriptionCollectionViewCell().identifier,
       for: indexPath
     ) as? DetailDesccriptionCollectionViewCell else { return UICollectionViewCell() }
     
@@ -234,7 +234,7 @@ extension DetailViewController: UICollectionViewDelegate, UICollectionViewDataSo
   func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
     guard let header = collectionView.dequeueReusableSupplementaryView(
       ofKind: UICollectionView.elementKindSectionHeader,
-      withReuseIdentifier: DetailHeaderView.identifier,
+      withReuseIdentifier: DetailHeaderView().identifier,
       for: indexPath
     ) as? DetailHeaderView else { return UICollectionReusableView() }
     
