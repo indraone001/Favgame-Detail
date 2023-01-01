@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Favgame-Core
+import Favgame_Core
 
 public class DetailRouter {
   let container: Container = {
