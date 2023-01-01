@@ -52,12 +52,12 @@ public class DetailViewController: UIViewController {
   }()
   
   // MARK: - Life Cycle
-  override func viewWillAppear(_ animated: Bool) {
+  public override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     checkFavorite()
   }
   
-  override func viewDidLoad() {
+  public override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = UIColor(rgb: Constant.rhinoColor)
     self.tabBarController?.tabBar.isHidden = true
@@ -214,11 +214,11 @@ public class DetailViewController: UIViewController {
 
 extension DetailViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
   // MARK: - UICollectionViewDataSource
-  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+  public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return 1
   }
   
-  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+  public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard let cell = collectionView.dequeueReusableCell(
       withReuseIdentifier: DetailDesccriptionCollectionViewCell().identifier,
       for: indexPath
@@ -231,7 +231,7 @@ extension DetailViewController: UICollectionViewDelegate, UICollectionViewDataSo
   }
   
   // MARK: - UICollectionViewDelegate
-  func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+  public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
     guard let header = collectionView.dequeueReusableSupplementaryView(
       ofKind: UICollectionView.elementKindSectionHeader,
       withReuseIdentifier: DetailHeaderView().identifier,
@@ -246,11 +246,11 @@ extension DetailViewController: UICollectionViewDelegate, UICollectionViewDataSo
   }
   
   // MARK: - UICollectionViewDelegateFlowLayout
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+  public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
     return CGSize(width: view.frame.width, height: 300)
   }
   
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+  public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     return CGSize(width: view.frame.width, height: 1200)
   }
   
